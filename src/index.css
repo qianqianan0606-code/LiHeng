@@ -1,0 +1,109 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,700;0,800;1,800&family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;1,400&family=Gochi+Hand&display=swap');
+
+@theme {
+  --font-headline: "Plus Jakarta Sans", sans-serif;
+  --font-body: "Be Vietnam Pro", sans-serif;
+  --font-handwritten: "Gochi Hand", cursive;
+
+  --color-surface-container-low: #fffadf;
+  --color-on-error: #ffffff;
+  --color-on-secondary-fixed-variant: #4e5f5e;
+  --color-on-primary-fixed-variant: #682f1c;
+  --color-on-surface-variant: #69663c;
+  --color-secondary-dim: #4b5b5b;
+  --color-surface-container-high: #f7f0b0;
+  --color-on-secondary: #ffffff;
+  --color-surface-bright: #fffbff;
+  --color-error-container: #fb5151;
+  --color-on-error-container: #570008;
+  --color-surface-container-highest: #f1eba6;
+  --color-background: #fffbff;
+  --color-tertiary-fixed-dim: #e7c3ed;
+  --color-on-secondary-container: #445554;
+  --color-tertiary-container: #f5d1fb;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-variant: #f1eba6;
+  --color-primary-fixed-dim: #e8977e;
+  --color-on-tertiary-fixed: #4c3253;
+  --color-primary-fixed: #f7a48b;
+  --color-on-secondary-fixed: #324242;
+  --color-surface-tint: #95523d;
+  --color-on-primary-fixed: #3f1103;
+  --color-tertiary-fixed: #f5d1fb;
+  --color-error: #c0262d;
+  --color-secondary-container: #d4e6e5;
+  --color-primary-container: #f7a48b;
+  --color-secondary-fixed: #d4e6e5;
+  --color-inverse-surface: #100f00;
+  --color-primary-dim: #864733;
+  --color-on-primary: #ffffff;
+  --color-on-tertiary-container: #604567;
+  --color-on-background: #3c3914;
+  --color-outline: #868256;
+  --color-error-dim: #9f0519;
+  --color-surface-container: #fcf6b9;
+  --color-on-surface: #3c3914;
+  --color-secondary-fixed-dim: #c6d8d7;
+  --color-inverse-on-surface: #a39f70;
+  --color-inverse-primary: #f7a48b;
+  --color-secondary: #576867;
+  --color-on-tertiary-fixed-variant: #6a4e71;
+  --color-on-tertiary: #ffffff;
+  --color-surface: #fffbff;
+  --color-surface-dim: #ece59e;
+  --color-primary: #95523d;
+  --color-tertiary: #775a7e;
+  --color-outline-variant: #c0bb8a;
+  --color-tertiary-dim: #6a4e71;
+  --color-on-primary-container: #5c2615;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-background font-body;
+    background-image: radial-gradient(#ece59e 0.5px, transparent 0.5px);
+    background-size: 24px 24px;
+  }
+}
+
+@layer components {
+  .sketchy-card {
+    @apply border-2 border-outline-variant/30 shadow-sm;
+    border-radius: 2% 98% 3% 97%/96% 3% 97% 4%;
+  }
+
+  .wobbly-border {
+    @apply border-2 border-outline-variant/30;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  }
+
+  .organic-blob {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+
+  .sticker-effect {
+    @apply border-2 border-white shadow-[2px_2px_0_rgba(0,0,0,0.1)];
+    filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.05));
+  }
+
+  .ruled-paper {
+    background-image: repeating-linear-gradient(transparent, transparent 31px, #c0bb8a 31px, #c0bb8a 32px);
+    line-height: 32px;
+  }
+
+  .torn-paper {
+    @apply bg-surface-container-low;
+    clip-path: polygon(0% 2%, 10% 0%, 20% 3%, 30% 1%, 40% 4%, 50% 2%, 60% 5%, 70% 3%, 80% 6%, 90% 4%, 100% 7%, 100% 93%, 90% 96%, 80% 94%, 70% 97%, 60% 95%, 50% 98%, 40% 96%, 30% 99%, 20% 97%, 10% 100%, 0% 98%);
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(var(--rot, 0deg)); }
+  50% { transform: translateY(-10px) rotate(calc(var(--rot, 0deg) + 5deg)); }
+  100% { transform: translateY(0px) rotate(var(--rot, 0deg)); }
+}
+
+.float-doodle {
+  animation: float 6s ease-in-out infinite;
+}
